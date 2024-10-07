@@ -12,7 +12,7 @@ This repository contains 4 files:
 4. **LICENSE** – This project is licensed under the MIT License.
 
 
-### Check out the model on Hugging Face:
+## Check out the model on Hugging Face:
 
 You can view the model and try it out directly on Hugging Face [here](https://huggingface.co/tootooba/flan-t5-qa-study-assistant).
 
