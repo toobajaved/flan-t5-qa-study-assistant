@@ -2,8 +2,18 @@
 
 This project is a **question-answering model** based on the **FLAN-T5** architecture. It was created for the **ShiftKey Labs Generative AI certification** program. The model was trained to answer questions based on a given context, like the famous **SQuAD** dataset-style tasks.
 
+## Project Contents
+
+This repository contains 4 files:
+
+1. **README.md** – Provides an overview of the project and usage instructions.
+2. **FLAN_T5_QA_Study_Assistant.ipynb** – The original notebook that trains and runs the FLAN-T5 model for question-answering tasks.
+3. **Study_Assistant_test.ipynb** – A test notebook that demonstrates how the model performs on several example questions and contexts.
+4. **LICENSE** – This project is licensed under the MIT License.
+
 ### Check out the model on Hugging Face:
 You can view the model and try it out directly on Hugging Face [here](https://huggingface.co/tootooba/flan-t5-qa-study-assistant).
+
 
 ## What Does This Model Do?
 
