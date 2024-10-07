@@ -2,15 +2,18 @@
 
 This project is a **question-answering model** based on the **FLAN-T5** architecture. It was created for the **ShiftKey Labs Generative AI certification** program. The model was trained to answer questions based on a given context, like the famous **SQuAD** dataset-style tasks.
 
+### Check out the model on Hugging Face:
+You can view the model and try it out directly on Hugging Face [here](https://huggingface.co/tootooba/flan-t5-qa-study-assistant).
+
 ## What Does This Model Do?
 
 This model can answer questions based on a passage of text you provide. For example, you can give it a piece of text about the **Eiffel Tower**, and then ask a question like, "When was the Eiffel Tower constructed?" The model will return the correct answer!
 
 ## How to Use the Model
 
-Here’s a simple way to use this model for question-answering using **transformers**.
+Here’s a simple way to use this model for question-answering using **transformers**, or you can use the **Hugging Face Inference API** directly.
 
-### Steps to Run:
+### Option 1: Running the Model Locally with `transformers`
 
 1. **Install the transformers library**:
    - Open your terminal or command prompt.
@@ -42,3 +45,42 @@ Here’s a simple way to use this model for question-answering using **transform
    answer = tokenizer.decode(outputs[0], skip_special_tokens=True)
 
    print("Answer:", answer)
+
+### Option 2: Using Hugging Face Inference API
+
+You can also use the **Hugging Face Inference API** to run the model without setting it up locally.
+
+1. **Get Your API Token**:
+   - Go to [Hugging Face Tokens](https://huggingface.co/settings/ttokens), and create a new token if you don’t have one already.
+
+2. **Run the Model via API**:
+
+   Here’s a simple Python code to send a request to the **Hugging Face Inference API** for the **FLAN-T5 QA Study Assistant**:
+
+   ```python
+   import requests
+
+   # Your Hugging Face Model Inference API URL
+   API_URL = "https://api-inference.huggingface.co/models/tootooba/flan-t5-qa-study-assistant"
+   
+   # Replace with your actual Hugging Face API token
+   headers = {"Authorization": "Bearer YOUR_HF_API_TOKEN"}
+
+   def query(payload):
+       response = requests.post(API_URL, headers=headers, json=payload)
+       return response.json()
+
+   # Define the context and question
+   context = "The Eiffel Tower is a wrought-iron lattice tower on the Champ de Mars in Paris, France. It was constructed between 1887 and 1889 as the entrance arch for the 1889 World's Fair."
+   question = "When was the Eiffel Tower constructed?"
+
+   # Send the request and get the result
+   result = query({
+       "inputs": {
+           "question": question,
+           "context": context
+       }
+   })
+
+   # Print the answer
+   print("Answer:", result)
