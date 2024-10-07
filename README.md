@@ -96,3 +96,7 @@ You can also use the **Hugging Face Inference API** to run the model without set
 
    # Print the answer
    print("Answer:", result)
+
+## Author
+
+This project was developed by **Tooba Javed** as part of the ShiftKey Labs Generative AI certification program.
